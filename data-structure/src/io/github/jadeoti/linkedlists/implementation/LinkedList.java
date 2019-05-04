@@ -55,6 +55,31 @@ public class LinkedList<T> {
 
     public void deleteAtIndex(int index){
 
+        // index is 0, data it the head
+        if(index == 0){
+            Node keep  = head.next;
+            head.next = null;
+            head.value = null;
+            head = keep;
+        }else {
+            int position = 0;
+            Node current = head;
+            Node previous = null;
+            while (current!= null){
+
+                previous = current;
+                current = current.next;
+                position++;
+
+                if(position == index){
+                    Node right = current.next;
+                    current.value = null;
+                    current.next = null;
+                    previous.next = right;
+                    break;
+                }
+            }
+        }
     }
 
 
