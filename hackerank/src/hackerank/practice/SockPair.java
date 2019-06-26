@@ -21,8 +21,7 @@ public class SockPair {
         HashMap<Integer, Integer> sockPair = new HashMap<Integer, Integer>();
         for (int s : ar) {
             int count = sockPair.get(s) == null ? 0 : sockPair.get(s);
-            count = count + 1;
-            sockPair.put(s, count);
+            sockPair.put(s, ++count);
         }
 
         // for each item of has map
