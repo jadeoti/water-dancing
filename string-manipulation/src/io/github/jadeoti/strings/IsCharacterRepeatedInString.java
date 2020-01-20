@@ -4,9 +4,11 @@ import java.util.HashMap;
 
 public class IsCharacterRepeatedInString {
     public static void main(String[] args) {
+        System.out.println('A' - 65);
         System.out.println(checkUniqueness2("addeoti"));
         System.out.println(checkUniqueness("addeoti"));
-
+        System.out.println(checkUniqueness2("adeoti"));
+        System.out.println(checkUniqueness("adeoti"));
     }
 
     public static boolean checkUniqueness(String s){
@@ -28,9 +30,10 @@ public class IsCharacterRepeatedInString {
         char[] map = new char[256];
         for(char c : s.toCharArray()){
             map[c]++;
+            System.out.println(map[c]);
             if(map[c] > 1)
-                return true;
+                return false;
         }
-        return false;
+        return true;
     }
 }
